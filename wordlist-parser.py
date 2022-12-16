@@ -60,13 +60,11 @@ def main():
             for word in content.rsplit("\n"):
                 if len(word) == word_length:
                     wordlist.append(word)
-        f.close
 
         with open(f"wordlist_length_{word_length}.txt", "w") as f:
             print(f"{Fore.LIGHTRED_EX}>  Creating wordlist...")
             for word in wordlist:
                 f.write(f"{word}\n")
-        f.close
         print(f"{Fore.LIGHTRED_EX}>  wordlist_length_{word_length}.txt created.")
 
     else:
