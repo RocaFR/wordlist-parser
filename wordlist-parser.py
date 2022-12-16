@@ -2,6 +2,7 @@ from PyInquirer import prompt
 from pyfiglet import Figlet
 from colorama import Fore
 from prompt_toolkit.validation import Validator, ValidationError
+from tqdm import tqdm
 
 header = Figlet()
 print(header.renderText("Wordlist parser"))
@@ -44,14 +45,6 @@ questions = [
     },
     {"type": "confirm", "name": "confirm", "message": "Is it okay for you?"},
 ]
-
-
-def number_validator(value):
-    try:
-        int(value)
-    except:
-        print("")
-
 
 def main():
     # Asking prompt
