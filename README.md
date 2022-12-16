@@ -7,8 +7,6 @@
 
 A simple parser for your wordlists :)
 
-![GIF demo](https://i.postimg.cc/SRKc2t6k/wordlist-parser.gif)
-
 ## Installation
 
 ```bash
@@ -25,3 +23,5 @@ pip install -r requirements.txt
 ```bash
 python wordlist-parser.py
 ```
+
+![GIF demo](https://i.postimg.cc/SRKc2t6k/wordlist-parser.gif)
