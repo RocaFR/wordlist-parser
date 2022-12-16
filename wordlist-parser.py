@@ -18,11 +18,23 @@ class NumberValidator(Validator):
             )
 
 
+class WordlistValidator(Validator):
+    def validate(self, document):
+        try:
+            open(document.text, "r", encoding="utf-8", errors="ignore")
+
+        except:
+            raise ValidationError(
+                message="Invalid wordlist", cursor_position=len(document.text)
+            )
+
+
 questions = [
     {
         "type": "input",
         "name": "wordlist",
-        "message": "Wordlist to parse:"
+        "message": "Wordlist to parse:",
+        "validate": WordlistValidator,
     },
     {
         "type": "input",
@@ -30,11 +42,7 @@ questions = [
         "message": "Length of words:",
         "validate": NumberValidator,
     },
-    {
-        "type": "confirm",
-        "name": "confirm",
-        "message": "Is it okay for you?"
-    },
+    {"type": "confirm", "name": "confirm", "message": "Is it okay for you?"},
 ]
 
 
