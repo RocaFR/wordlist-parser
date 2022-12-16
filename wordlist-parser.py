@@ -46,6 +46,7 @@ questions = [
     {"type": "confirm", "name": "confirm", "message": "Is it okay for you?"},
 ]
 
+
 def main():
     # Asking prompt
     answers = prompt(questions)
@@ -58,7 +59,8 @@ def main():
         with open(initial_wordlist, "r", encoding="utf-8", errors="ignore") as f:
             print(f"{Fore.LIGHTRED_EX}>  Parsing files with the right length...")
             content = f.read().strip()
-            for word in content.rsplit("\n"):
+            words = content.rsplit("\n")
+            for word in tqdm(words):
                 if len(word) == word_length:
                     wordlist.append(word)
 
@@ -67,7 +69,6 @@ def main():
             for word in wordlist:
                 f.write(f"{word}\n")
         print(f"{Fore.LIGHTRED_EX}>  wordlist_length_{word_length}.txt created.")
-
     else:
         main()
 
