@@ -57,7 +57,7 @@ def main():
     if confirm:
         wordlist = []
         with open(initial_wordlist, "r", encoding="utf-8", errors="ignore") as f:
-            print(f"{Fore.LIGHTRED_EX}>  Parsing files with the right length...")
+            print(f"\n{Fore.LIGHTRED_EX}>  Parsing files with the right length...")
             content = f.read().strip()
             words = content.rsplit("\n")
             for word in tqdm(words):
